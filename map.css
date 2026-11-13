@@ -1,15 +1,24 @@
 html,
 body {
   margin: 0;
-  padding: 5;
+  padding:0;
   height: 100%;
   width: 100%;
+}
+
+body {
   display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2em;
+  box-sizing: border-box;
 }
 
 #map {
+  position: relative;
   width: 100%; /* Adjust width to your desired size */
-  height: 100%; /* Adjust height to your desired size */
+  height: 700px; /* Adjust height to your desired size */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for effect */
   border-radius: 8px; /* Optional: rounded corners */
 }
@@ -18,8 +27,40 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
   z-index: 1;
   pointer-events: none;
+}
+
+#map svg circle {
+  fill: steelblue;
+  fill-opacity: 0.5;
+  stroke: white;
+  pointer-events: auto;
+}
+
+header {
+  display: flex;
+  gap: 1em;
+  align-items: baseline;
+}
+
+header label {
+  margin-left: auto;
+  text-align: right;
+}
+
+header input[type="range"] {
+  width: 400px;
+}
+
+header time,
+header em {
+  display: block;
+}
+
+header em {
+  color: gray;
+  font-style: italic;
 }
